@@ -1,1 +1,11 @@
-// header.scss
+@use "./../utils" as *;
+
+.appHeader {
+  background: yellow;
+  padding: rem(16px) rem(24px);
+
+  @include mobile {
+    background: $dark-brown;
+    color: $white;
+  }
+}
