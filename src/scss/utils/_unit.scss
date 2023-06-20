@@ -21,3 +21,6 @@ $rootUnit: 16px !default;
 }
 
 // em 단위 변경 코드 참조 - 훨씬 간단
+//@function rem($value, $base: $rootUnit) {
+//  @return (removeUnit(math.div($value, $base))) * 1rem;
+//}
