@@ -1,8 +1,8 @@
-@use "./utils/media-query" as *;
+@use "./utils" as *;
 
 body {
+  width: removeUnit(100px);
   background: yellow;
-
   @include mobile{
     background: pink;
   };

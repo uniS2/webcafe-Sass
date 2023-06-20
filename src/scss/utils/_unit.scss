@@ -1,1 +1,21 @@
-// util.scss
+// @mixin 속성, 값 등 css 코드를 출력
+// @function은 return 값을 출력
+
+// 내장함수 호출 - 나누기 기능
+@use "sass:math";
+
+// 루트 요소 기본 단위 --------------------------------------------------------------- /
+$rootUnit: 16px !default;
+
+// 단위 제거 함수 ------------------------------------------------------------------ /
+@function removeUnit($value) {
+  // @return ($value / ($value * 0 + 1));
+  @return math.div($value, $value * 0 + 1);
+}
+
+// px을 rem 단위로 변경하는 함수 ------------------------------------------------------- /
+@function rem($value, $base: $rootUnit) {
+  // $removeValue: removeUnit($value);
+  // $removeBase: removeUnit($base);
+  // @return math.div($removeValue, $removeBase) * 1rem;
+}
