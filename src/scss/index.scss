@@ -1,7 +1,7 @@
 @use "./utils" as *;
 
 body {
-  width: removeUnit(100px);
+  width: rem(240px);
   background: yellow;
   @include mobile{
     background: pink;
