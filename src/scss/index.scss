@@ -1,1 +1,13 @@
-// index.scss
+@use "./utils/media-query" as *;
+
+body {
+  background: yellow;
+
+  @include mobile{
+    background: pink;
+  };
+
+  @include desktop{
+    background: skyblue;
+  };
+}
