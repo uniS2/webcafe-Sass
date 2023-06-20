@@ -29,6 +29,19 @@
   transform: translateY(-50%);
 }
 
+@mixin posCenter {
+  @include pos;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin posBottomY {
+  @include pos;
+  top: 100%;
+  transform: translateY(-100%);
+}
+
 @mixin containerMax($max-width: 1024px) {
   max-width: rem($max-width);
   @include autoMargin;
