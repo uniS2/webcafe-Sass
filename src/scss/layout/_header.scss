@@ -7,6 +7,12 @@
   @include mobile {
     background: $dark-brown;
     color: $white;
+    
+    @include flexbox($direction: column);
+  }
+
+  @include desktop {
+    position: relative;
   }
 }
 
@@ -20,15 +26,26 @@
     height: 100%;
     background: url(/assets/images/webcafe-logo.png) no-repeat;
   }
+
+  @include desktop {
+    @include posCenter;
+  }
 }
 
 // 멤버 서비스
 .memberOnly{
   background: green;
   @include flexbox ($justify: flex-end);
+
+  @include mobile {
+    order: -1;
+  }
 }
 
-// 크래스를 따로 작성하지 않아도 mixin을 통해 적용할 수 있도록
-.memberOnly li:last-child {
-  @include a11yHidden;
+// 검색 폼
+.searchForm {
+  &__group {
+    text-align: right;
+    background: blue;
+  }
 }
