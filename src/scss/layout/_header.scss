@@ -27,3 +27,8 @@
   background: green;
   @include flexbox ($justify: flex-end);
 }
+
+// 크래스를 따로 작성하지 않아도 mixin을 통해 적용할 수 있도록
+.memberOnly li:last-child {
+  @include a11yHidden;
+}
