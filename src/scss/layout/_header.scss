@@ -1,4 +1,5 @@
 @use "./../utils" as *;
+@use "./../components" as *;
 
 .appHeader {
   background: yellow;
@@ -7,7 +8,7 @@
   @include mobile {
     background: $dark-brown;
     color: $white;
-    
+
     @include flexbox($direction: column);
   }
 
@@ -21,6 +22,7 @@
 .logo {
   width: rem(204px);
   height: rem(60px);
+
   &__link {
     display: block;
     height: 100%;
@@ -33,7 +35,7 @@
 }
 
 // 멤버 서비스
-.memberOnly{
+.memberOnly {
   background: green;
   @include flexbox ($justify: flex-end);
 
@@ -45,7 +47,20 @@
 // 검색 폼
 .searchForm {
   &__group {
-    text-align: right;
+    // text-align: right;
     background: blue;
+    @include flexbox ($justify: flex-end);
+
+    @include mobile {
+      .formInput {
+        flex-grow: 1;   // 반응형 !!
+      }
+    }
+
+    @include desktop {
+      .formInput {
+        width: rem(460px);
+      }
+    }
   }
 }
