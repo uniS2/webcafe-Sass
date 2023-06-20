@@ -48,8 +48,9 @@
 .searchForm {
   &__group {
     // text-align: right;
-    background: blue;
+    // background: blue;
     @include flexbox ($justify: flex-end);
+    gap: rem(16px);
 
     @include mobile {
       .formInput {

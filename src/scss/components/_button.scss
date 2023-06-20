@@ -1,1 +1,21 @@
-// button.scss
+@use "./../utils" as *;
+
+.button {
+  // 에이전트 스타일 초기화
+  border: 0;
+  background: transparent;
+  @include paddingX(16px);
+  font-size: rem(14px);
+  border-radius: rem(4px);
+
+  &--fill {
+    background: $brown;
+    color: $white;
+  }
+
+  &--outline {
+    color: $brown;
+    border: 1px solid currentColor;
+  }
+
+}
