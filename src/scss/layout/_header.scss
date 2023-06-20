@@ -21,3 +21,9 @@
     background: url(/assets/images/webcafe-logo.png) no-repeat;
   }
 }
+
+// 멤버 서비스
+.memberOnly{
+  background: green;
+  @include flexbox ($justify: flex-end);
+}
