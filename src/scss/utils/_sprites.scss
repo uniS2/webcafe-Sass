@@ -1,1 +1,46 @@
-// sprite.scss
+@use "color" as var;
+@use "unit" as *;
+@use "flexbox" as *;
+// utils 자기자신을 계속 부를 경우 무한루핑 - 재귀호출 - 에 빠져 에러를 발생할 확률이 높음
+
+$colors: (
+  "Green": var.$green,
+  "Yellow": var.$yellow,
+  "Brown": var.$brown,
+  "Orange": var.$orange,
+  "Blue": var.$blue,
+);
+
+@each $section, $color in $colors {
+  .accent#{$section} {
+    // 변수 네이밍 아닌 값 나갈 수 있도록 interporation. 보간법
+    color: $color;
+  }
+}
+
+// 스프라이트 배경이미지
+.sprite {
+  min-height: rem(60px);
+  background-image: url(./../assets/images/sprite_main.png);
+  background-repeat: no-repeat;
+  padding-left: rem(64px);
+  font-size: rem(18px);
+  font-weight: 700;
+  @include flexbox(column, center);
+
+  [class*="enTitle"] {
+    font-size: rem(16px);
+    font-weight: 400;
+  }
+
+  // 리스트 (값1 공백 값2)으로 구분 가능
+  $sprites: Book, Board, News, Favorite, Twitter;
+  $x: 0;
+  $y: 0;
+  @each $sprite in $sprites {
+    &#{$sprite} {
+      background-position: $x $y;
+    }
+    $y: $y - 115px;
+  }
+}
