@@ -1,1 +1,48 @@
-// home.scss
+@use "./../utils" as *;
+
+.appMain {
+  background: skyblue;
+  @include paddingX(20px);
+  @include paddingY(16px);
+
+  @include mobile {
+    @include gridbox(1, 100%, 16px, 0);
+  }
+
+  @include desktop {
+    @include containerMax;
+    @include gridbox($row-gap: 16px, $column-gap: 20px);
+    grid-template-areas:
+      "news news news news news news news news news news news news"
+      "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
+      "book book book book . board board board board board board board";
+  }
+}
+
+// 메인 콘텐츠 (데스크탑에만 적용)
+@include desktop {
+  // 추천 서적
+  .book {
+    grid-area: book;
+  }
+
+  // 새소식
+  .news {
+    grid-area: news;
+  }
+
+  // 게시판
+  .board {
+    grid-area: board;
+  }
+
+  // 인기 사이트
+  .favorite {
+    grid-area: favorite;
+  }
+
+  // 트위터
+  .twitter {
+    grid-area: twitter;
+  }
+}
