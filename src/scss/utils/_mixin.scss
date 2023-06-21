@@ -89,8 +89,7 @@
 }
 
 // 그리드 믹스인
-@mixin gridbox (
-  $column-count: 12,
+@mixin gridbox ($column-count: 12,
   $column-width: 1fr,
   $row-gap: 0,
   $column-gap: 16px) {
@@ -99,4 +98,30 @@
   grid-template-rows: auto;
   grid-column-gap: rem($column-gap);
   grid-row-gap: rem($row-gap);
+}
+
+// ratio 믹스인
+// 작동은 가능. 문법오류 아닌 /를 나눗셈으로 간주하여 나눗셈할 때 /만 쓰는 것은 deprecation 될테니 / 를 저렇게 단독으로 사용하지 말라고 알려주는 것
+@mixin ratio($w: 16, $h: 9) {
+  aspect-ratio: $w / $h;
+}
+
+// 반응형 콘텐츠
+// 비트맵 width: 100%. 벡터 max-width
+@mixin respons($width: max-width, $height: auto) {
+  #{$width}: 100%;
+  height: $height;
+}
+
+// 말줄임표
+@mixin textOver {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 이미지 맞추기
+@mixin fit($posX: 50%, $posY: 50%, $fit: cover) {
+  object-fit: $fit;
+  object-position: $posX $posY;
 }

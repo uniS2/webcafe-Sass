@@ -367,6 +367,58 @@ legend {
   margin: -1px;
 }
 
+.accentBook {
+  color: #abd375;
+}
+
+.accentNews {
+  color: #e8ca58;
+}
+
+.accentBoard {
+  color: #988574;
+}
+
+.accentFavorite {
+  color: #eea60a;
+}
+
+.accentTwitter {
+  color: #6aaee6;
+}
+
+.sprite {
+  min-height: 3.75rem;
+  background-image: url(./../assets/images/sprite_main.png);
+  background-repeat: no-repeat;
+  padding-left: 4rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+.sprite [class*=enTitle] {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.spriteBook {
+  background-position: 0 0;
+}
+.spriteBoard {
+  background-position: 0 -115px;
+}
+.spriteNews {
+  background-position: 0 -230px;
+}
+.spriteFavorite {
+  background-position: 0 -345px;
+}
+.spriteTwitter {
+  background-position: 0 -460px;
+}
+
 .formInput__input {
   appearance: none;
   display: block;
@@ -397,9 +449,9 @@ legend {
 
 @media (max-width: 767px) {
   .button--burger {
+    background: transparent;
     width: 2.25rem;
     height: 2.25rem;
-    background: blue;
     border: 0;
     padding: 0;
     position: absolute;
@@ -504,5 +556,162 @@ legend {
     width: 25rem;
   }
 }
+
+@media (max-width: 767px) {
+  .is--active .menu__list {
+    transform: none;
+  }
+  .menu__list {
+    background: rgba(240, 230, 140, 0.85);
+    padding: 1.25rem;
+    width: 70vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-150%);
+  }
+  .menu__item {
+    border-bottom: 1px solid #000;
+  }
+}
+@media (min-width: 768px) {
+  .menu {
+    background: #988574;
+  }
+  .menu__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+}
+.menu__link {
+  display: block;
+  padding: 1rem;
+}
+
+.appMain {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media (max-width: 767px) {
+  .appMain {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: auto;
+    grid-column-gap: 0rem;
+    grid-row-gap: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .appMain {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1rem;
+    grid-template-areas: "news news news news news news news news news news news news" "book book book book twitter twitter twitter twitter twitter favorite favorite favorite" "book book book book . board board board board board board board";
+  }
+}
+
+@media (min-width: 768px) {
+  .book {
+    grid-area: book;
+  }
+  .news {
+    grid-area: news;
+  }
+  .board {
+    grid-area: board;
+  }
+  .favorite {
+    grid-area: favorite;
+  }
+  .twitter {
+    grid-area: twitter;
+  }
+}
+.book__cover {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.book__info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  column-gap: 0.5rem;
+}
+.ratingStar {
+  width: 100%;
+  text-align: center;
+  font-size: 2.25rem;
+}
+
+.iframeWrapper {
+  aspect-ratio: 1.7777777778;
+}
+
+.board {
+  position: relative;
+}
+.board__item {
+  margin: 8px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  column-gap: 0.5rem;
+}
+.board__link {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board__date {
+  /* flex-basis: fill; */
+  white-space: nowrap;
+}
+.board__more {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.twitter__userProfile {
+  aspect-ratio: 1;
+}
+.twitter__userProfileImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 30% 40%;
+}
+
+/*
+        <figure class="twitter__userProfile">
+          <img src="./images/hero.jpg" alt="" class="twitter__userProfileImage" />
+        </figure>
+*/
 
 /*# sourceMappingURL=index.css.map */

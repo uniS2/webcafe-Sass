@@ -4,11 +4,11 @@
 // utils 자기자신을 계속 부를 경우 무한루핑 - 재귀호출 - 에 빠져 에러를 발생할 확률이 높음
 
 $colors: (
-  "Green": var.$green,
-  "Yellow": var.$yellow,
-  "Brown": var.$brown,
-  "Orange": var.$orange,
-  "Blue": var.$blue,
+  "Book": var.$green,
+  "News": var.$yellow,
+  "Board": var.$brown,
+  "Favorite": var.$orange,
+  "Twitter": var.$blue,
 );
 
 @each $section, $color in $colors {
